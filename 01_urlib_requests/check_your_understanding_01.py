@@ -15,10 +15,20 @@ page_text = page_bin.decode('utf-8')
 
 # Regex over the text to find whatever we want
 # "Name:" and "Favorite Color:"
-result = dict()
-result['name_start'] = page_text.find("<h2>") + 4
-result['name_end'] = page_text.find("</h2>")
-result['name_content'] = page_text[result['name_start']:result['name_end']]
+scrape_list = ["Name", "Favorite Color"]
+extracted_text = {}
+
+for scrape in scrape_list:
+    start_addr = page_text.find(scrape)
+    start_txt_addr = start_addr + len(scrape)
+
+    next_tag_offset = page_text[start_txt_addr:].find('<')
+    end_text_addr = next_tag_offset + start_txt_addr
+
+    raw = page_text[start_txt_addr : end_text_addr]
+    clean = raw.strip(': \r\t\n')
+
+    extracted_text[scrape] = clean
 
 # Print the result
-print(result)
+print(extracted_text)

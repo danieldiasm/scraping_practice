@@ -23,3 +23,10 @@ I wanted to do some webscraping because:
 ### Sources
  - Python Web Scraping Tutorials from Real Python - [Link](https://realpython.com/tutorials/web-scraping/)
  - Web Scraping introduction from Real Python - [Link](https://realpython.com/python-web-scraping-practical-introduction/)
+
+### Exercises
+
+1. *URLib Requests*
+   - Check Your Understanding 01 (check_your_understanding.py) - Only Requests and Find
+      -  A not very conventional/practical way of scraping, but good for concepts practice.
+2. *Beautiful Soup 4*
